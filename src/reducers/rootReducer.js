@@ -5,10 +5,7 @@ export const rootReducer = (state = {
 }, action ) => {
   switch (action.type) {
     case SAVE_COMBO_BOX_ITEM:
-      const newState = {
-        comboBoxItem: action.comboBoxItem
-      }
-      return { ...state, newState }
+      return Object.assign({}, state, {comboBoxItem: action.comboBoxItem})
     default: 
       return state
   }
